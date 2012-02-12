@@ -57,10 +57,9 @@
 		NSArray *things = [moc executeFetchRequest:req error:nil];
 		NSData *existing = [NSKeyedArchiver archivedDataWithRootObject:things.lastObject];
 		if(![existing isEqual:rep]) {
-			id thing = [NSKeyedUnarchiver unarchiveObjectWithData:rep];
+			[NSKeyedUnarchiver unarchiveObjectWithData:rep]; // inserts it too through voodoo magic
 			if(things.count > 0)
 				[moc deleteObject:things.lastObject];
-			[moc insertObject:thing];
 		}
 		// *shudder*
 	}
