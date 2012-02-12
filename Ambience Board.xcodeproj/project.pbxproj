@@ -19,6 +19,26 @@
 		502CDB1D14E75BAF00F60766 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CDB1C14E75BAF00F60766 /* DetailViewController.m */; };
 		502CDB2014E75BAF00F60766 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 502CDB1E14E75BAF00F60766 /* MasterViewController.xib */; };
 		502CDB2314E75BAF00F60766 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 502CDB2114E75BAF00F60766 /* DetailViewController.xib */; };
+		502CDC5B14E76B3F00F60766 /* AQGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CDC4714E76B3F00F60766 /* AQGridView.m */; };
+		502CDC5C14E76B3F00F60766 /* AQGridViewAnimatorItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CDC4914E76B3F00F60766 /* AQGridViewAnimatorItem.m */; };
+		502CDC5D14E76B3F00F60766 /* AQGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CDC4C14E76B3F00F60766 /* AQGridViewCell.m */; };
+		502CDC5E14E76B3F00F60766 /* AQGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CDC4E14E76B3F00F60766 /* AQGridViewController.m */; };
+		502CDC5F14E76B3F00F60766 /* AQGridViewData.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CDC5014E76B3F00F60766 /* AQGridViewData.m */; };
+		502CDC6014E76B3F00F60766 /* AQGridViewUpdateInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CDC5214E76B3F00F60766 /* AQGridViewUpdateInfo.m */; };
+		502CDC6114E76B3F00F60766 /* AQGridViewUpdateItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CDC5414E76B3F00F60766 /* AQGridViewUpdateItem.m */; };
+		502CDC6214E76B3F00F60766 /* NSIndexSet+AQIndexesOutsideSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CDC5614E76B3F00F60766 /* NSIndexSet+AQIndexesOutsideSet.m */; };
+		502CDC6314E76B3F00F60766 /* NSIndexSet+AQIsSetContiguous.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CDC5814E76B3F00F60766 /* NSIndexSet+AQIsSetContiguous.m */; };
+		502CDC6414E76B3F00F60766 /* UIColor+AQGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CDC5A14E76B3F00F60766 /* UIColor+AQGridView.m */; };
+		502CDC6614E76B8B00F60766 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502CDC6514E76B8B00F60766 /* QuartzCore.framework */; };
+		502CDC6A14E76E9600F60766 /* EnvironmentCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CDC6914E76E9600F60766 /* EnvironmentCellView.m */; };
+		502CDC7D14E7740200F60766 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 502CDC7C14E7740200F60766 /* background.png */; };
+		502CDC8F14E7785100F60766 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CDC8E14E7785100F60766 /* Board.m */; };
+		502CDC9214E7785100F60766 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CDC9114E7785100F60766 /* Track.m */; };
+		50869B0614E784A70013D354 /* Environment.m in Sources */ = {isa = PBXBuildFile; fileRef = 50869B0514E784A70013D354 /* Environment.m */; };
+		50956DC514E77C8000993BFB /* EnvironmentEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50956DC314E77C8000993BFB /* EnvironmentEditorViewController.m */; };
+		50956DC614E77C8000993BFB /* EnvironmentEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50956DC414E77C8000993BFB /* EnvironmentEditorViewController.xib */; };
+		50956DCA14E781B200993BFB /* TrackChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50956DC814E781B200993BFB /* TrackChooserViewController.m */; };
+		50956DCB14E781B200993BFB /* TrackChooserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50956DC914E781B200993BFB /* TrackChooserViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,19 +47,58 @@
 		502CDB0314E75BAF00F60766 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		502CDB0514E75BAF00F60766 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		502CDB0714E75BAF00F60766 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		502CDB0B14E75BAF00F60766 /* Ambience Board-Info.plist */ = {isa = PBXFileReference; path = "Ambience Board-Info.plist"; sourceTree = "<group>"; };
+		502CDB0B14E75BAF00F60766 /* Ambience Board-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Ambience Board-Info.plist"; sourceTree = "<group>"; };
 		502CDB0D14E75BAF00F60766 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		502CDB0F14E75BAF00F60766 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		502CDB1114E75BAF00F60766 /* Ambience Board-Prefix.pch */ = {isa = PBXFileReference; path = "Ambience Board-Prefix.pch"; sourceTree = "<group>"; };
-		502CDB1214E75BAF00F60766 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		502CDB1114E75BAF00F60766 /* Ambience Board-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ambience Board-Prefix.pch"; sourceTree = "<group>"; };
+		502CDB1214E75BAF00F60766 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		502CDB1314E75BAF00F60766 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		502CDB1614E75BAF00F60766 /* Ambience_Board.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ambience_Board.xcdatamodel; sourceTree = "<group>"; };
-		502CDB1814E75BAF00F60766 /* MasterViewController.h */ = {isa = PBXFileReference; path = MasterViewController.h; sourceTree = "<group>"; };
+		502CDB1814E75BAF00F60766 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		502CDB1914E75BAF00F60766 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		502CDB1B14E75BAF00F60766 /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
+		502CDB1B14E75BAF00F60766 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		502CDB1C14E75BAF00F60766 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		502CDB1F14E75BAF00F60766 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
 		502CDB2214E75BAF00F60766 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+		502CDC4414E76B3F00F60766 /* AQGridView+CellLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AQGridView+CellLayout.h"; sourceTree = "<group>"; };
+		502CDC4514E76B3F00F60766 /* AQGridView+CellLocationDelegation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AQGridView+CellLocationDelegation.h"; sourceTree = "<group>"; };
+		502CDC4614E76B3F00F60766 /* AQGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQGridView.h; sourceTree = "<group>"; };
+		502CDC4714E76B3F00F60766 /* AQGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQGridView.m; sourceTree = "<group>"; };
+		502CDC4814E76B3F00F60766 /* AQGridViewAnimatorItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQGridViewAnimatorItem.h; sourceTree = "<group>"; };
+		502CDC4914E76B3F00F60766 /* AQGridViewAnimatorItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQGridViewAnimatorItem.m; sourceTree = "<group>"; };
+		502CDC4A14E76B3F00F60766 /* AQGridViewCell+AQGridViewCellPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AQGridViewCell+AQGridViewCellPrivate.h"; sourceTree = "<group>"; };
+		502CDC4B14E76B3F00F60766 /* AQGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQGridViewCell.h; sourceTree = "<group>"; };
+		502CDC4C14E76B3F00F60766 /* AQGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQGridViewCell.m; sourceTree = "<group>"; };
+		502CDC4D14E76B3F00F60766 /* AQGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQGridViewController.h; sourceTree = "<group>"; };
+		502CDC4E14E76B3F00F60766 /* AQGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQGridViewController.m; sourceTree = "<group>"; };
+		502CDC4F14E76B3F00F60766 /* AQGridViewData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQGridViewData.h; sourceTree = "<group>"; };
+		502CDC5014E76B3F00F60766 /* AQGridViewData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQGridViewData.m; sourceTree = "<group>"; };
+		502CDC5114E76B3F00F60766 /* AQGridViewUpdateInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQGridViewUpdateInfo.h; sourceTree = "<group>"; };
+		502CDC5214E76B3F00F60766 /* AQGridViewUpdateInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQGridViewUpdateInfo.m; sourceTree = "<group>"; };
+		502CDC5314E76B3F00F60766 /* AQGridViewUpdateItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AQGridViewUpdateItem.h; sourceTree = "<group>"; };
+		502CDC5414E76B3F00F60766 /* AQGridViewUpdateItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AQGridViewUpdateItem.m; sourceTree = "<group>"; };
+		502CDC5514E76B3F00F60766 /* NSIndexSet+AQIndexesOutsideSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+AQIndexesOutsideSet.h"; sourceTree = "<group>"; };
+		502CDC5614E76B3F00F60766 /* NSIndexSet+AQIndexesOutsideSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+AQIndexesOutsideSet.m"; sourceTree = "<group>"; };
+		502CDC5714E76B3F00F60766 /* NSIndexSet+AQIsSetContiguous.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+AQIsSetContiguous.h"; sourceTree = "<group>"; };
+		502CDC5814E76B3F00F60766 /* NSIndexSet+AQIsSetContiguous.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+AQIsSetContiguous.m"; sourceTree = "<group>"; };
+		502CDC5914E76B3F00F60766 /* UIColor+AQGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AQGridView.h"; sourceTree = "<group>"; };
+		502CDC5A14E76B3F00F60766 /* UIColor+AQGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AQGridView.m"; sourceTree = "<group>"; };
+		502CDC6514E76B8B00F60766 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		502CDC6814E76E9600F60766 /* EnvironmentCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnvironmentCellView.h; sourceTree = "<group>"; };
+		502CDC6914E76E9600F60766 /* EnvironmentCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnvironmentCellView.m; sourceTree = "<group>"; };
+		502CDC7C14E7740200F60766 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		502CDC8D14E7785100F60766 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Board.h; path = "../../Ambience Board/Board.h"; sourceTree = "<group>"; };
+		502CDC8E14E7785100F60766 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Board.m; path = "../../Ambience Board/Board.m"; sourceTree = "<group>"; };
+		502CDC9014E7785100F60766 /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Track.h; path = "../../Ambience Board/Track.h"; sourceTree = "<group>"; };
+		502CDC9114E7785100F60766 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Track.m; path = "../../Ambience Board/Track.m"; sourceTree = "<group>"; };
+		50869B0414E784A70013D354 /* Environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Environment.h; path = "Ambience Board/Environment.h"; sourceTree = SOURCE_ROOT; };
+		50869B0514E784A70013D354 /* Environment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Environment.m; path = "Ambience Board/Environment.m"; sourceTree = SOURCE_ROOT; };
+		50956DC214E77C8000993BFB /* EnvironmentEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnvironmentEditorViewController.h; sourceTree = "<group>"; };
+		50956DC314E77C8000993BFB /* EnvironmentEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnvironmentEditorViewController.m; sourceTree = "<group>"; };
+		50956DC414E77C8000993BFB /* EnvironmentEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnvironmentEditorViewController.xib; sourceTree = "<group>"; };
+		50956DC714E781B200993BFB /* TrackChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackChooserViewController.h; sourceTree = "<group>"; };
+		50956DC814E781B200993BFB /* TrackChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackChooserViewController.m; sourceTree = "<group>"; };
+		50956DC914E781B200993BFB /* TrackChooserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackChooserViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,9 +106,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502CDC6614E76B8B00F60766 /* QuartzCore.framework in Frameworks */,
+				502CDB0614E75BAF00F60766 /* CoreGraphics.framework in Frameworks */,
 				502CDB0214E75BAF00F60766 /* UIKit.framework in Frameworks */,
 				502CDB0414E75BAF00F60766 /* Foundation.framework in Frameworks */,
-				502CDB0614E75BAF00F60766 /* CoreGraphics.framework in Frameworks */,
 				502CDB0814E75BAF00F60766 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +137,7 @@
 		502CDB0014E75BAF00F60766 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				502CDC6514E76B8B00F60766 /* QuartzCore.framework */,
 				502CDB0114E75BAF00F60766 /* UIKit.framework */,
 				502CDB0314E75BAF00F60766 /* Foundation.framework */,
 				502CDB0514E75BAF00F60766 /* CoreGraphics.framework */,
@@ -90,13 +151,10 @@
 			children = (
 				502CDB1214E75BAF00F60766 /* AppDelegate.h */,
 				502CDB1314E75BAF00F60766 /* AppDelegate.m */,
-				502CDB1814E75BAF00F60766 /* MasterViewController.h */,
-				502CDB1914E75BAF00F60766 /* MasterViewController.m */,
-				502CDB1B14E75BAF00F60766 /* DetailViewController.h */,
-				502CDB1C14E75BAF00F60766 /* DetailViewController.m */,
-				502CDB1E14E75BAF00F60766 /* MasterViewController.xib */,
-				502CDB2114E75BAF00F60766 /* DetailViewController.xib */,
-				502CDB1514E75BAF00F60766 /* Ambience_Board.xcdatamodeld */,
+				50956DC014E77C5F00993BFB /* View Controllers */,
+				502CDC6714E76E6600F60766 /* Views */,
+				502CDC8914E7781700F60766 /* Model */,
+				502CDC4314E76B3F00F60766 /* AQGridView */,
 				502CDB0A14E75BAF00F60766 /* Supporting Files */,
 			);
 			path = "Ambience Board";
@@ -105,12 +163,87 @@
 		502CDB0A14E75BAF00F60766 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				502CDC7C14E7740200F60766 /* background.png */,
 				502CDB0B14E75BAF00F60766 /* Ambience Board-Info.plist */,
 				502CDB0C14E75BAF00F60766 /* InfoPlist.strings */,
 				502CDB0F14E75BAF00F60766 /* main.m */,
 				502CDB1114E75BAF00F60766 /* Ambience Board-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		502CDC4314E76B3F00F60766 /* AQGridView */ = {
+			isa = PBXGroup;
+			children = (
+				502CDC4414E76B3F00F60766 /* AQGridView+CellLayout.h */,
+				502CDC4514E76B3F00F60766 /* AQGridView+CellLocationDelegation.h */,
+				502CDC4614E76B3F00F60766 /* AQGridView.h */,
+				502CDC4714E76B3F00F60766 /* AQGridView.m */,
+				502CDC4814E76B3F00F60766 /* AQGridViewAnimatorItem.h */,
+				502CDC4914E76B3F00F60766 /* AQGridViewAnimatorItem.m */,
+				502CDC4A14E76B3F00F60766 /* AQGridViewCell+AQGridViewCellPrivate.h */,
+				502CDC4B14E76B3F00F60766 /* AQGridViewCell.h */,
+				502CDC4C14E76B3F00F60766 /* AQGridViewCell.m */,
+				502CDC4D14E76B3F00F60766 /* AQGridViewController.h */,
+				502CDC4E14E76B3F00F60766 /* AQGridViewController.m */,
+				502CDC4F14E76B3F00F60766 /* AQGridViewData.h */,
+				502CDC5014E76B3F00F60766 /* AQGridViewData.m */,
+				502CDC5114E76B3F00F60766 /* AQGridViewUpdateInfo.h */,
+				502CDC5214E76B3F00F60766 /* AQGridViewUpdateInfo.m */,
+				502CDC5314E76B3F00F60766 /* AQGridViewUpdateItem.h */,
+				502CDC5414E76B3F00F60766 /* AQGridViewUpdateItem.m */,
+				502CDC5514E76B3F00F60766 /* NSIndexSet+AQIndexesOutsideSet.h */,
+				502CDC5614E76B3F00F60766 /* NSIndexSet+AQIndexesOutsideSet.m */,
+				502CDC5714E76B3F00F60766 /* NSIndexSet+AQIsSetContiguous.h */,
+				502CDC5814E76B3F00F60766 /* NSIndexSet+AQIsSetContiguous.m */,
+				502CDC5914E76B3F00F60766 /* UIColor+AQGridView.h */,
+				502CDC5A14E76B3F00F60766 /* UIColor+AQGridView.m */,
+			);
+			name = AQGridView;
+			path = AQGridView/Classes;
+			sourceTree = SOURCE_ROOT;
+		};
+		502CDC6714E76E6600F60766 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				502CDC6814E76E9600F60766 /* EnvironmentCellView.h */,
+				502CDC6914E76E9600F60766 /* EnvironmentCellView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		502CDC8914E7781700F60766 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				502CDB1514E75BAF00F60766 /* Ambience_Board.xcdatamodeld */,
+				502CDC9014E7785100F60766 /* Track.h */,
+				502CDC9114E7785100F60766 /* Track.m */,
+				502CDC8D14E7785100F60766 /* Board.h */,
+				502CDC8E14E7785100F60766 /* Board.m */,
+				50869B0414E784A70013D354 /* Environment.h */,
+				50869B0514E784A70013D354 /* Environment.m */,
+			);
+			name = Model;
+			path = ../AQGridView/Classes;
+			sourceTree = "<group>";
+		};
+		50956DC014E77C5F00993BFB /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				502CDB1814E75BAF00F60766 /* MasterViewController.h */,
+				502CDB1914E75BAF00F60766 /* MasterViewController.m */,
+				502CDB1E14E75BAF00F60766 /* MasterViewController.xib */,
+				502CDB1B14E75BAF00F60766 /* DetailViewController.h */,
+				502CDB1C14E75BAF00F60766 /* DetailViewController.m */,
+				502CDB2114E75BAF00F60766 /* DetailViewController.xib */,
+				50956DC214E77C8000993BFB /* EnvironmentEditorViewController.h */,
+				50956DC314E77C8000993BFB /* EnvironmentEditorViewController.m */,
+				50956DC414E77C8000993BFB /* EnvironmentEditorViewController.xib */,
+				50956DC714E781B200993BFB /* TrackChooserViewController.h */,
+				50956DC814E781B200993BFB /* TrackChooserViewController.m */,
+				50956DC914E781B200993BFB /* TrackChooserViewController.xib */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +300,9 @@
 				502CDB0E14E75BAF00F60766 /* InfoPlist.strings in Resources */,
 				502CDB2014E75BAF00F60766 /* MasterViewController.xib in Resources */,
 				502CDB2314E75BAF00F60766 /* DetailViewController.xib in Resources */,
+				502CDC7D14E7740200F60766 /* background.png in Resources */,
+				50956DC614E77C8000993BFB /* EnvironmentEditorViewController.xib in Resources */,
+				50956DCB14E781B200993BFB /* TrackChooserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +318,22 @@
 				502CDB1714E75BAF00F60766 /* Ambience_Board.xcdatamodeld in Sources */,
 				502CDB1A14E75BAF00F60766 /* MasterViewController.m in Sources */,
 				502CDB1D14E75BAF00F60766 /* DetailViewController.m in Sources */,
+				502CDC5B14E76B3F00F60766 /* AQGridView.m in Sources */,
+				502CDC5C14E76B3F00F60766 /* AQGridViewAnimatorItem.m in Sources */,
+				502CDC5D14E76B3F00F60766 /* AQGridViewCell.m in Sources */,
+				502CDC5E14E76B3F00F60766 /* AQGridViewController.m in Sources */,
+				502CDC5F14E76B3F00F60766 /* AQGridViewData.m in Sources */,
+				502CDC6014E76B3F00F60766 /* AQGridViewUpdateInfo.m in Sources */,
+				502CDC6114E76B3F00F60766 /* AQGridViewUpdateItem.m in Sources */,
+				502CDC6214E76B3F00F60766 /* NSIndexSet+AQIndexesOutsideSet.m in Sources */,
+				502CDC6314E76B3F00F60766 /* NSIndexSet+AQIsSetContiguous.m in Sources */,
+				502CDC6414E76B3F00F60766 /* UIColor+AQGridView.m in Sources */,
+				502CDC6A14E76E9600F60766 /* EnvironmentCellView.m in Sources */,
+				502CDC8F14E7785100F60766 /* Board.m in Sources */,
+				502CDC9214E7785100F60766 /* Track.m in Sources */,
+				50956DC514E77C8000993BFB /* EnvironmentEditorViewController.m in Sources */,
+				50956DCA14E781B200993BFB /* TrackChooserViewController.m in Sources */,
+				50869B0614E784A70013D354 /* Environment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +455,7 @@
 				502CDB2814E75BAF00F60766 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -313,7 +466,8 @@
 				502CDB1614E75BAF00F60766 /* Ambience_Board.xcdatamodel */,
 			);
 			currentVersion = 502CDB1614E75BAF00F60766 /* Ambience_Board.xcdatamodel */;
-			path = Ambience_Board.xcdatamodeld;
+			name = Ambience_Board.xcdatamodeld;
+			path = "../../Ambience Board/Ambience_Board.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

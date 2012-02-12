@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Event">
-        <attribute name="timeStamp" optional="YES" attributeType="Date"/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11D50" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Board" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="spotifyUserName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="environments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Environment" inverseName="board" inverseEntity="Environment" syncable="YES"/>
+    </entity>
+    <entity name="Environment" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="board" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Board" inverseName="environments" inverseEntity="Board" syncable="YES"/>
+        <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Track" inverseName="environment" inverseEntity="Track" syncable="YES"/>
+    </entity>
+    <entity name="Track" syncable="YES">
+        <attribute name="endTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="spotifyUri" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="environment" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Environment" inverseName="tracks" inverseEntity="Environment" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
+        <element name="Board" positionX="-4007" positionY="-1809" width="128" height="90"/>
+        <element name="Environment" positionX="-3843" positionY="-1809" width="128" height="90"/>
+        <element name="Track" positionX="-3672" positionY="-1824" width="128" height="105"/>
     </elements>
 </model>

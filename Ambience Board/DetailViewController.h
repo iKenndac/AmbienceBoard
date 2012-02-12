@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AQGridView.h"
+#import "AQGridViewController.h"
+#import "Board.h"
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface DetailViewController : AQGridViewController <UISplitViewControllerDelegate, AQGridViewDataSource, AQGridViewDelegate>
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) Board *board;
 
 @property (strong, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+
+@property (strong, nonatomic) UIPopoverController *popover;
 
 @end

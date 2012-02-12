@@ -7,6 +7,10 @@
 //
 
 #import "DetailViewController.h"
+#import "EnvironmentCellView.h"
+#import <QuartzCore/QuartzCore.h>
+#import "Environment.h"
+#import "EnvironmentEditorViewController.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -15,16 +19,17 @@
 
 @implementation DetailViewController
 
-@synthesize detailItem = _detailItem;
+@synthesize board = _board;
 @synthesize detailDescriptionLabel = _detailDescriptionLabel;
 @synthesize masterPopoverController = _masterPopoverController;
+@synthesize popover;
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+- (void)setBoard:(Board *)newBoard
 {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+    if (_board != newBoard) {
+        _board = newBoard;
         
         // Update the view.
         [self configureView];
@@ -38,16 +43,89 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
-	if (self.detailItem) {
-	    self.detailDescriptionLabel.text = [self.detailItem description];
-	}
+	[self.gridView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
+}
+
+#pragma mark -
+#pragma mark AQGridView
+
+-(NSUInteger)numberOfItemsInGridView:(AQGridView *)gridView {
+	return self.board.environments.count;
+}
+
+-(AQGridViewCell *)gridView:(AQGridView *)gridView cellForItemAtIndex:(NSUInteger)index {
+	EnvironmentCellView *cell = (EnvironmentCellView *)[gridView dequeueReusableCellWithIdentifier:@"cell"];
+	if (cell == nil)
+		cell = [[EnvironmentCellView alloc] initWithFrame:CGRectMake(0.0, 0.0, 200.0, 150.0) reuseIdentifier:@"cell"];
+	
+	cell.image = [UIImage imageNamed:@"background.png"];
+	cell.selectionGlowColor = [UIColor blueColor];
+	cell.selectionGlowShadowRadius = 5.0;
+	cell.title = [[[self.board.environments allObjects] objectAtIndex:index] name];
+	return cell;
+}
+
+- (CGSize)portraitGridCellSizeForGridView:(AQGridView *)aGridView {
+    return CGSizeMake(224.0, 168.0);
+}
+
+-(void)gridView:(AQGridView *)gridView didSelectItemAtIndex:(NSUInteger)index {
+	
+	EnvironmentEditorViewController *editorController = [[EnvironmentEditorViewController alloc] init];
+	editorController.environment = [[[self.board environments] allObjects] objectAtIndex:index];
+	
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:editorController];
+	self.popover = [[UIPopoverController alloc] initWithContentViewController:navController];
+	
+	[self.popover presentPopoverFromRect:[gridView rectForItemAtIndex:index]
+								  inView:gridView
+				permittedArrowDirections:UIPopoverArrowDirectionAny
+								animated:YES];
+}
+
+-(void)gridView:(AQGridView *)gridView didDeselectItemAtIndex:(NSUInteger)index {
+	if (self.popover) {
+		[self.popover dismissPopoverAnimated:YES];
+		self.popover = nil;
+	}
+}
+
+#pragma mark -
+#pragma mark Model
+
+-(void)insertNewObject {
+	
+	// Create a new instance of the entity managed by the fetched results controller.
+    NSManagedObjectContext *context = [self.board managedObjectContext];
+    Environment *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Environment"
+																  inManagedObjectContext:context];
+    
+    // If appropriate, configure the new managed object.
+    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
+    newManagedObject.name = @"New Environment";
+    
+	[self.board addEnvironmentsObject:newManagedObject];
+	
+    // Save the context.
+    NSError *error = nil;
+    if (![context save:&error]) {
+        /*
+         Replace this implementation with code to handle the error appropriately.
+         
+         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+         */
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+	
+	[self.gridView reloadData];
+	
 }
 
 #pragma mark - View lifecycle
@@ -57,6 +135,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	[self configureView];
+	
+	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject)];
+	self.navigationItem.rightBarButtonItem = addButton;
+	
+	self.gridView.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)viewDidUnload
@@ -105,7 +188,7 @@
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    barButtonItem.title = NSLocalizedString(@"Boards", @"Boards");
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
     self.masterPopoverController = popoverController;
 }
