@@ -29,11 +29,11 @@
 }
 - (id)initWithCoder:(NSCoder *)aDecoder;
 {
-	NSEntityDescription *desc = [NSEntityDescription entityForName:@"Environment" inManagedObjectContext:[(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext]];
+	NSEntityDescription *desc = [NSEntityDescription entityForName:@"Track" inManagedObjectContext:[(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext]];
 	if(!(self = [super initWithEntity:desc insertIntoManagedObjectContext:nil]))
 		return nil;
 	
-	self.spotifyUri = [aDecoder decodeObjectForKey:@"name"];
+	self.spotifyUri = [aDecoder decodeObjectForKey:@"spotifyUri"];
 	self.startTime = [aDecoder decodeObjectForKey:@"startTime"];
 	self.endTime = [aDecoder decodeObjectForKey:@"endTime"];
 	self.artist = [aDecoder decodeObjectForKey:@"artist"];

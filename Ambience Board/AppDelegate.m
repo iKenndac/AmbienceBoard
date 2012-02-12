@@ -24,7 +24,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	EnviroClient *cl = [EnviroClient client];
-	cl.host = @"nevyn.nu";
+	cl.host = @"ishtori.nevyn.nu";
 	[cl run];
 	
 #include "../appkey.c"
