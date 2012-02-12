@@ -7,6 +7,7 @@
 //
 
 #import "EnvironmentCellView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation EnvironmentCellView
 
@@ -20,18 +21,30 @@
     _title = [[UITextField alloc] initWithFrame:CGRectZero];
     //_title.highlightedTextColor = [UIColor whiteColor];
     _title.font = [UIFont systemFontOfSize:20.0];
+	_title.textColor = [UIColor whiteColor];
     _title.adjustsFontSizeToFitWidth = YES;
     _title.minimumFontSize = 20.0;
 	_title.delegate = self;
 	_title.textAlignment = UITextAlignmentCenter;
     
-    self.backgroundColor = [UIColor colorWithWhite: 0.95 alpha: 1.0];
+    self.backgroundColor = [UIColor clearColor];
     self.contentView.backgroundColor = self.backgroundColor;
     _imageView.backgroundColor = self.backgroundColor;
-    _title.backgroundColor = self.backgroundColor;
-    
+	_imageView.contentMode = UIViewContentModeScaleAspectFill;
+	_imageView.clipsToBounds = YES;
+    _title.backgroundColor = [UIColor clearColor];
+	
+	_imageView.layer.cornerRadius = 10.0;
+	_imageView.clipsToBounds = YES;
+	_imageView.userInteractionEnabled = YES;
+	
+	_titleBackground = [[UIView alloc] initWithFrame:CGRectZero];
+	_titleBackground.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+    _titleBackground.userInteractionEnabled = YES;
+	
     [self.contentView addSubview: _imageView];
-    [self.contentView addSubview: _title];
+	[_imageView addSubview:_titleBackground];
+    [_titleBackground addSubview:_title];
     
     return ( self );
 }
@@ -64,37 +77,24 @@
 {
     [super layoutSubviews];
     
-    CGSize imageSize = _imageView.image.size;
-    CGRect bounds = CGRectInset( self.contentView.bounds, 10.0, 10.0 );
-    
-    [_title sizeToFit];
-    CGRect frame = _title.frame;
-    frame.size.width = MIN(frame.size.width, bounds.size.width);
-    frame.origin.y = CGRectGetMaxY(bounds) - frame.size.height;
-    frame.origin.x = floorf((bounds.size.width - frame.size.width) * 0.5);
+    _imageView.frame = self.contentView.bounds;
+	
+	[_title sizeToFit];
+	
+	CGRect titleBackgroundFrame = _imageView.bounds;
+	titleBackgroundFrame.size.height = _title.frame.size.height * 1.5;
+	titleBackgroundFrame.origin.y = _imageView.bounds.size.height - titleBackgroundFrame.size.height;
+	
+	_titleBackground.frame = titleBackgroundFrame;
+	
+    //CGRect bounds = CGRectInset( self.contentView.bounds, 10.0, 10.0 );
+	
+	CGRect frame = _titleBackground.bounds;
+	frame.size.height = _title.bounds.size.height;
+    frame.origin.y = (titleBackgroundFrame.size.height / 2) - (frame.size.height / 2);
     _title.frame = frame;
     
-    // adjust the frame down for the image layout calculation
-    bounds.size.height = frame.origin.y - bounds.origin.y;
     
-    if ( (imageSize.width <= bounds.size.width) &&
-        (imageSize.height <= bounds.size.height) )
-    {
-        return;
-    }
-    
-    // scale it down to fit
-    CGFloat hRatio = bounds.size.width / imageSize.width;
-    CGFloat vRatio = bounds.size.height / imageSize.height;
-    CGFloat ratio = MIN(hRatio, vRatio);
-    
-    [_imageView sizeToFit];
-    frame = _imageView.frame;
-    frame.size.width = floorf(imageSize.width * ratio);
-    frame.size.height = floorf(imageSize.height * ratio);
-    frame.origin.x = floorf((bounds.size.width - frame.size.width) * 0.5);
-    frame.origin.y = floorf((bounds.size.height - frame.size.height) * 0.5);
-    _imageView.frame = frame;
 }
 
 

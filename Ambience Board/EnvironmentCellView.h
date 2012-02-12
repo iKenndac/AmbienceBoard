@@ -13,6 +13,7 @@
 @interface EnvironmentCellView : AQGridViewCell <UITextFieldDelegate> {
     UIImageView * _imageView;
     UITextField * _title;
+	UIView * _titleBackground;
 }
 
 @property (nonatomic, retain) UIImage * image;
