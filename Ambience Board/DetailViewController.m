@@ -72,6 +72,7 @@
 	cell.selectionGlowColor = [UIColor blueColor];
 	cell.selectionGlowShadowRadius = 5.0;
 	cell.title = environment.name;
+	cell.environment = environment;
 	return cell;
 }
 

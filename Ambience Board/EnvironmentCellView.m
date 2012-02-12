@@ -16,12 +16,14 @@
     if ( self == nil )
         return ( nil );
     
-    _imageView = [[UIImageView alloc] initWithFrame: CGRectZero];
-    _title = [[UILabel alloc] initWithFrame: CGRectZero];
-    _title.highlightedTextColor = [UIColor whiteColor];
-    _title.font = [UIFont boldSystemFontOfSize: 12.0];
+    _imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    _title = [[UITextField alloc] initWithFrame:CGRectZero];
+    //_title.highlightedTextColor = [UIColor whiteColor];
+    _title.font = [UIFont systemFontOfSize:20.0];
     _title.adjustsFontSizeToFitWidth = YES;
-    _title.minimumFontSize = 10.0;
+    _title.minimumFontSize = 20.0;
+	_title.delegate = self;
+	_title.textAlignment = UITextAlignmentCenter;
     
     self.backgroundColor = [UIColor colorWithWhite: 0.95 alpha: 1.0];
     self.contentView.backgroundColor = self.backgroundColor;
@@ -34,6 +36,7 @@
     return ( self );
 }
 
+@synthesize environment;
 
 - (UIImage *) image
 {
@@ -92,6 +95,13 @@
     frame.origin.x = floorf((bounds.size.width - frame.size.width) * 0.5);
     frame.origin.y = floorf((bounds.size.height - frame.size.height) * 0.5);
     _imageView.frame = frame;
+}
+
+
+-(BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+	self.environment.name = textField.text;
+	[self.environment.managedObjectContext save:nil];
+	return YES;
 }
 
 

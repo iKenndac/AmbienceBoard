@@ -39,9 +39,7 @@
 @synthesize environment;
 
 -(IBAction)playEnvironment:(id)sender {
-	
 	[[(AppDelegate *)[[UIApplication sharedApplication] delegate] ambienceController] beginGeneratingAmbienceForEnvironment:self.environment];
-	
 }
 
 #pragma mark - View lifecycle

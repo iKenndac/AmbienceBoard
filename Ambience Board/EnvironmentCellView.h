@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "AQGridViewCell.h"
+#import "Environment.h"
 
-@interface EnvironmentCellView : AQGridViewCell {
+@interface EnvironmentCellView : AQGridViewCell <UITextFieldDelegate> {
     UIImageView * _imageView;
-    UILabel * _title;
+    UITextField * _title;
 }
 
 @property (nonatomic, retain) UIImage * image;
 @property (nonatomic, copy) NSString * title;
 
+@property (nonatomic, readwrite, strong) Environment *environment;
 
 @end
