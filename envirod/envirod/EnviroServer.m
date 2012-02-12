@@ -29,6 +29,8 @@
 	// TCAHP's delegate now.
 	TCAsyncHashProtocol *proto = [[TCAsyncHashProtocol alloc] initWithSocket:newSocket delegate:self];
 	
+    NSLog(@"New user: %@", proto);
+    
 	// Dispatch on selector of the incoming command instead of using delegate methods.
 	proto.autoDispatchCommands = YES;
 	
@@ -58,6 +60,7 @@
 
 -(void)command:(TCAsyncHashProtocol*)proto addOrUpdateBoard:(NSDictionary*)hash;
 {
+    NSLog(@"Received new board for %@", [hash objectForKey:@"name"]);
 	[_boards setObject:[hash objectForKey:@"rep"] forKey:[hash objectForKey:@"name"]];
 	[self broadcast:[NSDictionary dictionaryWithObjectsAndKeys:
 		@"boardList", @"command",

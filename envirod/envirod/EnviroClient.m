@@ -29,6 +29,7 @@
 }
 - (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port;
 {
+    NSLog(@"Connected");
 	_proto = [[TCAsyncHashProtocol alloc] initWithSocket:sock delegate:self];
 	
 	// Dispatch on selector of the incoming command instead of using delegate methods.
@@ -36,6 +37,10 @@
 	
 	// Start reading from the socket.
 	[_proto readHash];
+}
+- (void)onSocket:(AsyncSocket *)sock willDisconnectWithError:(NSError *)err;
+{
+    NSLog(@"Disconnected :( %@", err);
 }
 
 -(NSDictionary*)boards;

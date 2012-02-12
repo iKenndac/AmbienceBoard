@@ -24,15 +24,14 @@
 }
 - (id)initWithCoder:(NSCoder *)aDecoder;
 {
-	NSEntityDescription *desc = [NSEntityDescription entityForName:@"Board" inManagedObjectContext:[(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext]];
-	if(!(self = [super initWithEntity:desc insertIntoManagedObjectContext:nil]))
+    NSManagedObjectContext *moc = [(AppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
+	NSEntityDescription *desc = [NSEntityDescription entityForName:@"Board" inManagedObjectContext:moc];
+	if(!(self = [super initWithEntity:desc insertIntoManagedObjectContext:moc]))
 		return nil;
 	
 	self.spotifyUserName = [aDecoder decodeObjectForKey:@"spotifyUserName"];
 	self.name = [aDecoder decodeObjectForKey:@"name"];
 	self.environments = [aDecoder decodeObjectForKey:@"environments"];
-	for(Environment *enviro in self.environments)
-		enviro.board = self;
 	
 	return self;
 }
