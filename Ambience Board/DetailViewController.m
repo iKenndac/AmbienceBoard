@@ -64,10 +64,14 @@
 	if (cell == nil)
 		cell = [[EnvironmentCellView alloc] initWithFrame:CGRectMake(0.0, 0.0, 200.0, 150.0) reuseIdentifier:@"cell"];
 	
-	cell.image = [UIImage imageNamed:@"background.png"];
+	
+	Environment *environment = [[self.board.environments allObjects] objectAtIndex:index];
+	
+	cell.image = [environment.name caseInsensitiveCompare:@"ruddy mysterious"] == NSOrderedSame ? 
+			[UIImage imageNamed:@"moss.jpg"] : [UIImage imageNamed:@"background.png"];
 	cell.selectionGlowColor = [UIColor blueColor];
 	cell.selectionGlowShadowRadius = 5.0;
-	cell.title = [[[self.board.environments allObjects] objectAtIndex:index] name];
+	cell.title = environment.name;
 	return cell;
 }
 

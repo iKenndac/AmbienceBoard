@@ -12,6 +12,7 @@
 		500DEB4A14E79F7F00EAC80F /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500DEB4914E79F7F00EAC80F /* CoreAudio.framework */; };
 		500DEB4E14E79FA200EAC80F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500DEB4D14E79FA200EAC80F /* AudioToolbox.framework */; };
 		500DEB5114E7ACEF00EAC80F /* EnvironmentAmbienceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 500DEB5014E7ACEF00EAC80F /* EnvironmentAmbienceController.m */; };
+		500DEB5314E82F1E00EAC80F /* moss.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 500DEB5214E82F1E00EAC80F /* moss.jpg */; };
 		502CDB0214E75BAF00F60766 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502CDB0114E75BAF00F60766 /* UIKit.framework */; };
 		502CDB0414E75BAF00F60766 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502CDB0314E75BAF00F60766 /* Foundation.framework */; };
 		502CDB0614E75BAF00F60766 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502CDB0514E75BAF00F60766 /* CoreGraphics.framework */; };
@@ -79,6 +80,7 @@
 		500DEB4D14E79FA200EAC80F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		500DEB4F14E7ACEF00EAC80F /* EnvironmentAmbienceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnvironmentAmbienceController.h; sourceTree = "<group>"; };
 		500DEB5014E7ACEF00EAC80F /* EnvironmentAmbienceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnvironmentAmbienceController.m; sourceTree = "<group>"; };
+		500DEB5214E82F1E00EAC80F /* moss.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = moss.jpg; sourceTree = "<group>"; };
 		502CDAFD14E75BAF00F60766 /* Ambience Board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ambience Board.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		502CDB0114E75BAF00F60766 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		502CDB0314E75BAF00F60766 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				502CDC7C14E7740200F60766 /* background.png */,
+				500DEB5214E82F1E00EAC80F /* moss.jpg */,
 				502CDB0B14E75BAF00F60766 /* Ambience Board-Info.plist */,
 				502CDB0C14E75BAF00F60766 /* InfoPlist.strings */,
 				502CDB0F14E75BAF00F60766 /* main.m */,
@@ -405,6 +408,7 @@
 				50956DCB14E781B200993BFB /* TrackChooserViewController.xib in Resources */,
 				508FC48914E78DA700E602D0 /* SPLoginViewController_iPad.xib in Resources */,
 				508FC48A14E78DA700E602D0 /* SPLoginViewController_iPhone.xib in Resources */,
+				500DEB5314E82F1E00EAC80F /* moss.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
