@@ -21,6 +21,7 @@
 
 @property (nonatomic, strong, readwrite) SPSearch *search;
 @property (weak, nonatomic) IBOutlet UITableView *searchResultsTable;
+@property (strong, readwrite, nonatomic) NSMutableArray *remainingSearchResults;
 
 @property (weak, nonatomic, readwrite) id <TrackChooserViewControllerDelegate> delegate;
 

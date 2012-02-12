@@ -44,6 +44,7 @@
 {
     // Update the user interface for the detail item.
 	[self.gridView reloadData];
+	self.title = self.board.name;
 }
 
 - (void)didReceiveMemoryWarning

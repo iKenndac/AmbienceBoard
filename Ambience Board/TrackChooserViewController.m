@@ -27,11 +27,12 @@
 @synthesize search;
 @synthesize searchResultsTable;
 @synthesize delegate;
+@synthesize remainingSearchResults;
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"search.tracks"]) {
+		self.remainingSearchResults = [NSMutableArray arrayWithArray:self.search.tracks];
         [self.searchResultsTable reloadData];
-		NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), self.search.tracks);
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
@@ -94,19 +95,25 @@
 	if (cell == nil)
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
 	
-	SPTrack *track = [self.search.tracks objectAtIndex:indexPath.row];
+	SPTrack *track = [self.remainingSearchResults objectAtIndex:indexPath.row];
 	cell.textLabel.text = track.name;
 	cell.detailTextLabel.text = track.consolidatedArtists;
 	return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return self.search.tracks.count;
+	return self.remainingSearchResults.count;
 }
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-	SPTrack *track = [self.search.tracks objectAtIndex:indexPath.row];
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	SPTrack *track = [self.remainingSearchResults objectAtIndex:indexPath.row];
 	[self.delegate trackChooser:self didChooseTracks:[NSArray arrayWithObject:track]];
+	
+	[self.remainingSearchResults removeObjectAtIndex:indexPath.row];
+	
+	[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+					 withRowAnimation:UITableViewRowAnimationRight];
+	
 }
 
 @end

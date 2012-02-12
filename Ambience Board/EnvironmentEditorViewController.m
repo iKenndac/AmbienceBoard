@@ -147,4 +147,19 @@
 		NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error);
 }
 
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (editingStyle == UITableViewCellEditingStyleDelete) {
+		
+		NSMutableArray *tracks = [[self.environment.tracks allObjects] mutableCopy];
+		[tracks removeObjectAtIndex:indexPath.row];
+		
+		self.environment.tracks = [NSSet setWithArray:tracks];
+		
+		[self.environment.managedObjectContext save:nil];
+		
+		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+						 withRowAnimation:UITableViewRowAnimationFade];
+	}
+}
+
 @end
