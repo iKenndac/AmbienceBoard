@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CocoaLibSpotify.h"
+#import "SPCoreAudioController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, SPSessionDelegate>
 
@@ -16,6 +17,8 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+@property (readwrite, strong, nonatomic) SPCoreAudioController *coreAudioController;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

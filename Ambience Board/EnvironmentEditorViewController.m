@@ -125,4 +125,16 @@
 	return self.environment.tracks.count;
 }
 
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+	Track *track = [[self.environment.tracks allObjects] objectAtIndex:indexPath.row];
+	SPTrack *spTrack = [SPTrack trackForTrackURL:[NSURL URLWithString:track.spotifyUri]
+									   inSession:[SPSession sharedSession]];
+	
+	NSError *error = nil;
+	[[SPSession sharedSession] playTrack:spTrack error:&error];
+	
+	if (error)
+		NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error);
+}
+
 @end

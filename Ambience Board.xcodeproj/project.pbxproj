@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500DEB4514E79D2C00EAC80F /* SPCoreAudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 500DEB4414E79D2C00EAC80F /* SPCoreAudioController.m */; };
+		500DEB4814E79DB100EAC80F /* SPCircularBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 500DEB4714E79DB100EAC80F /* SPCircularBuffer.m */; };
+		500DEB4A14E79F7F00EAC80F /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500DEB4914E79F7F00EAC80F /* CoreAudio.framework */; };
+		500DEB4E14E79FA200EAC80F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500DEB4D14E79FA200EAC80F /* AudioToolbox.framework */; };
+		500DEB5114E7ACEF00EAC80F /* EnvironmentAmbienceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 500DEB5014E7ACEF00EAC80F /* EnvironmentAmbienceController.m */; };
 		502CDB0214E75BAF00F60766 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502CDB0114E75BAF00F60766 /* UIKit.framework */; };
 		502CDB0414E75BAF00F60766 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502CDB0314E75BAF00F60766 /* Foundation.framework */; };
 		502CDB0614E75BAF00F60766 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502CDB0514E75BAF00F60766 /* CoreGraphics.framework */; };
@@ -66,6 +71,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		500DEB4314E79D2C00EAC80F /* SPCoreAudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPCoreAudioController.h; path = Shared/SPCoreAudioController.h; sourceTree = SOURCE_ROOT; };
+		500DEB4414E79D2C00EAC80F /* SPCoreAudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPCoreAudioController.m; path = Shared/SPCoreAudioController.m; sourceTree = SOURCE_ROOT; };
+		500DEB4614E79DB100EAC80F /* SPCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPCircularBuffer.h; path = Shared/SPCircularBuffer.h; sourceTree = SOURCE_ROOT; };
+		500DEB4714E79DB100EAC80F /* SPCircularBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPCircularBuffer.m; path = Shared/SPCircularBuffer.m; sourceTree = SOURCE_ROOT; };
+		500DEB4914E79F7F00EAC80F /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		500DEB4D14E79FA200EAC80F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		500DEB4F14E7ACEF00EAC80F /* EnvironmentAmbienceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnvironmentAmbienceController.h; sourceTree = "<group>"; };
+		500DEB5014E7ACEF00EAC80F /* EnvironmentAmbienceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnvironmentAmbienceController.m; sourceTree = "<group>"; };
 		502CDAFD14E75BAF00F60766 /* Ambience Board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ambience Board.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		502CDB0114E75BAF00F60766 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		502CDB0314E75BAF00F60766 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -138,6 +151,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500DEB4E14E79FA200EAC80F /* AudioToolbox.framework in Frameworks */,
+				500DEB4A14E79F7F00EAC80F /* CoreAudio.framework in Frameworks */,
 				50869B1B14E788630013D354 /* libCocoaLibSpotify.a in Frameworks */,
 				50869B1814E7881E0013D354 /* libstdc++.dylib in Frameworks */,
 				50869B1614E788190013D354 /* CFNetwork.framework in Frameworks */,
@@ -153,6 +168,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		500DEB4214E79D2000EAC80F /* Playback */ = {
+			isa = PBXGroup;
+			children = (
+				500DEB4314E79D2C00EAC80F /* SPCoreAudioController.h */,
+				500DEB4414E79D2C00EAC80F /* SPCoreAudioController.m */,
+				500DEB4614E79DB100EAC80F /* SPCircularBuffer.h */,
+				500DEB4714E79DB100EAC80F /* SPCircularBuffer.m */,
+				500DEB4F14E7ACEF00EAC80F /* EnvironmentAmbienceController.h */,
+				500DEB5014E7ACEF00EAC80F /* EnvironmentAmbienceController.m */,
+			);
+			name = Playback;
+			sourceTree = "<group>";
+		};
 		502CDAF214E75BAF00F60766 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +202,8 @@
 		502CDB0014E75BAF00F60766 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				500DEB4D14E79FA200EAC80F /* AudioToolbox.framework */,
+				500DEB4914E79F7F00EAC80F /* CoreAudio.framework */,
 				50869B1714E7881E0013D354 /* libstdc++.dylib */,
 				50869B1514E788190013D354 /* CFNetwork.framework */,
 				50869B1314E788130013D354 /* SystemConfiguration.framework */,
@@ -191,6 +221,7 @@
 			children = (
 				502CDB1214E75BAF00F60766 /* AppDelegate.h */,
 				502CDB1314E75BAF00F60766 /* AppDelegate.m */,
+				500DEB4214E79D2000EAC80F /* Playback */,
 				50956DC014E77C5F00993BFB /* View Controllers */,
 				502CDC6714E76E6600F60766 /* Views */,
 				502CDC8914E7781700F60766 /* Model */,
@@ -406,6 +437,9 @@
 				50956DCA14E781B200993BFB /* TrackChooserViewController.m in Sources */,
 				50869B0614E784A70013D354 /* Environment.m in Sources */,
 				508FC48B14E78DA700E602D0 /* SPLoginViewController.m in Sources */,
+				500DEB4514E79D2C00EAC80F /* SPCoreAudioController.m in Sources */,
+				500DEB4814E79DB100EAC80F /* SPCircularBuffer.m in Sources */,
+				500DEB5114E7ACEF00EAC80F /* EnvironmentAmbienceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
