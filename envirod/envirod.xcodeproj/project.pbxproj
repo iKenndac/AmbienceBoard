@@ -1,0 +1,264 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05CB5F0314E86E9100A9AA37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CB5F0214E86E9100A9AA37 /* Foundation.framework */; };
+		05CB5F0614E86E9100A9AA37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CB5F0514E86E9100A9AA37 /* main.m */; };
+		05CB5F0A14E86E9100A9AA37 /* envirod.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 05CB5F0914E86E9100A9AA37 /* envirod.1 */; };
+		05CB5F1414E86EAB00A9AA37 /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CB5F1114E86EAB00A9AA37 /* NSString+UUID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		05CB5F1514E86EAB00A9AA37 /* TCAsyncHashProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CB5F1314E86EAB00A9AA37 /* TCAsyncHashProtocol.m */; };
+		05CB5F1814E86ED000A9AA37 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CB5F1714E86ED000A9AA37 /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		05CB5F1A14E86F0900A9AA37 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CB5F1914E86F0900A9AA37 /* CoreServices.framework */; };
+		05CB5F1D14E86F2F00A9AA37 /* EnviroServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CB5F1C14E86F2F00A9AA37 /* EnviroServer.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		05CB5EFC14E86E9100A9AA37 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				05CB5F0A14E86E9100A9AA37 /* envirod.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		05CB5EFE14E86E9100A9AA37 /* envirod */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = envirod; sourceTree = BUILT_PRODUCTS_DIR; };
+		05CB5F0214E86E9100A9AA37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		05CB5F0514E86E9100A9AA37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		05CB5F0814E86E9100A9AA37 /* envirod-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "envirod-Prefix.pch"; sourceTree = "<group>"; };
+		05CB5F0914E86E9100A9AA37 /* envirod.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = envirod.1; sourceTree = "<group>"; };
+		05CB5F1014E86EAB00A9AA37 /* NSString+UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+UUID.h"; path = "TCHashProto/NSString+UUID.h"; sourceTree = "<group>"; };
+		05CB5F1114E86EAB00A9AA37 /* NSString+UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+UUID.m"; path = "TCHashProto/NSString+UUID.m"; sourceTree = "<group>"; };
+		05CB5F1214E86EAB00A9AA37 /* TCAsyncHashProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCAsyncHashProtocol.h; path = TCHashProto/TCAsyncHashProtocol.h; sourceTree = "<group>"; };
+		05CB5F1314E86EAB00A9AA37 /* TCAsyncHashProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCAsyncHashProtocol.m; path = TCHashProto/TCAsyncHashProtocol.m; sourceTree = "<group>"; };
+		05CB5F1614E86ED000A9AA37 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncSocket.h; path = AsyncSocket/RunLoop/AsyncSocket.h; sourceTree = "<group>"; };
+		05CB5F1714E86ED000A9AA37 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncSocket.m; path = AsyncSocket/RunLoop/AsyncSocket.m; sourceTree = "<group>"; };
+		05CB5F1914E86F0900A9AA37 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		05CB5F1B14E86F2F00A9AA37 /* EnviroServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnviroServer.h; sourceTree = "<group>"; };
+		05CB5F1C14E86F2F00A9AA37 /* EnviroServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnviroServer.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05CB5EFB14E86E9100A9AA37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05CB5F1A14E86F0900A9AA37 /* CoreServices.framework in Frameworks */,
+				05CB5F0314E86E9100A9AA37 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05CB5EF314E86E9100A9AA37 = {
+			isa = PBXGroup;
+			children = (
+				05CB5F1914E86F0900A9AA37 /* CoreServices.framework */,
+				05CB5F0414E86E9100A9AA37 /* envirod */,
+				05CB5F0114E86E9100A9AA37 /* Frameworks */,
+				05CB5EFF14E86E9100A9AA37 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		05CB5EFF14E86E9100A9AA37 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05CB5EFE14E86E9100A9AA37 /* envirod */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		05CB5F0114E86E9100A9AA37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05CB5F1014E86EAB00A9AA37 /* NSString+UUID.h */,
+				05CB5F1114E86EAB00A9AA37 /* NSString+UUID.m */,
+				05CB5F1214E86EAB00A9AA37 /* TCAsyncHashProtocol.h */,
+				05CB5F1314E86EAB00A9AA37 /* TCAsyncHashProtocol.m */,
+				05CB5F1614E86ED000A9AA37 /* AsyncSocket.h */,
+				05CB5F1714E86ED000A9AA37 /* AsyncSocket.m */,
+				05CB5F0214E86E9100A9AA37 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		05CB5F0414E86E9100A9AA37 /* envirod */ = {
+			isa = PBXGroup;
+			children = (
+				05CB5F1B14E86F2F00A9AA37 /* EnviroServer.h */,
+				05CB5F1C14E86F2F00A9AA37 /* EnviroServer.m */,
+				05CB5F0514E86E9100A9AA37 /* main.m */,
+				05CB5F0914E86E9100A9AA37 /* envirod.1 */,
+				05CB5F0714E86E9100A9AA37 /* Supporting Files */,
+			);
+			path = envirod;
+			sourceTree = "<group>";
+		};
+		05CB5F0714E86E9100A9AA37 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				05CB5F0814E86E9100A9AA37 /* envirod-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		05CB5EFD14E86E9100A9AA37 /* envirod */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05CB5F0D14E86E9100A9AA37 /* Build configuration list for PBXNativeTarget "envirod" */;
+			buildPhases = (
+				05CB5EFA14E86E9100A9AA37 /* Sources */,
+				05CB5EFB14E86E9100A9AA37 /* Frameworks */,
+				05CB5EFC14E86E9100A9AA37 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = envirod;
+			productName = envirod;
+			productReference = 05CB5EFE14E86E9100A9AA37 /* envirod */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		05CB5EF514E86E9100A9AA37 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 05CB5EF814E86E9100A9AA37 /* Build configuration list for PBXProject "envirod" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 05CB5EF314E86E9100A9AA37;
+			productRefGroup = 05CB5EFF14E86E9100A9AA37 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05CB5EFD14E86E9100A9AA37 /* envirod */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05CB5EFA14E86E9100A9AA37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05CB5F0614E86E9100A9AA37 /* main.m in Sources */,
+				05CB5F1414E86EAB00A9AA37 /* NSString+UUID.m in Sources */,
+				05CB5F1514E86EAB00A9AA37 /* TCAsyncHashProtocol.m in Sources */,
+				05CB5F1814E86ED000A9AA37 /* AsyncSocket.m in Sources */,
+				05CB5F1D14E86F2F00A9AA37 /* EnviroServer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		05CB5F0B14E86E9100A9AA37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		05CB5F0C14E86E9100A9AA37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		05CB5F0E14E86E9100A9AA37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "envirod/envirod-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		05CB5F0F14E86E9100A9AA37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "envirod/envirod-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05CB5EF814E86E9100A9AA37 /* Build configuration list for PBXProject "envirod" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05CB5F0B14E86E9100A9AA37 /* Debug */,
+				05CB5F0C14E86E9100A9AA37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05CB5F0D14E86E9100A9AA37 /* Build configuration list for PBXNativeTarget "envirod" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05CB5F0E14E86E9100A9AA37 /* Debug */,
+				05CB5F0F14E86E9100A9AA37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 05CB5EF514E86E9100A9AA37 /* Project object */;
+}

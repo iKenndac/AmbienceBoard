@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11D50" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Board" syncable="YES">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11D50b" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Board" representedClassName="Board" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="spotifyUserName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="environments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Environment" inverseName="board" inverseEntity="Environment" syncable="YES"/>
     </entity>
-    <entity name="Environment" syncable="YES">
+    <entity name="Environment" representedClassName="Environment" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="board" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Board" inverseName="environments" inverseEntity="Board" syncable="YES"/>
         <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Track" inverseName="environment" inverseEntity="Track" syncable="YES"/>
     </entity>
-    <entity name="Track" syncable="YES">
+    <entity name="Track" representedClassName="Track" syncable="YES">
         <attribute name="artist" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="endTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>

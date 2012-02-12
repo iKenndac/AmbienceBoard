@@ -11,7 +11,7 @@
 
 @class Environment;
 
-@interface Board : NSManagedObject
+@interface Board : NSManagedObject <NSCoding>
 
 @property (nonatomic, retain) NSString * spotifyUserName;
 @property (nonatomic, retain) NSString * name;

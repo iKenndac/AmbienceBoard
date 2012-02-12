@@ -9,6 +9,7 @@
 #import "MasterViewController.h"
 #import "Board.h"
 #import "DetailViewController.h"
+#import "EnviroClient.h"
 
 @interface MasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -27,6 +28,10 @@
 		self.title = NSLocalizedString(@"Boards", @"Boards");
 		self.clearsSelectionOnViewWillAppear = NO;
 		self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+		
+		EnviroClient *cl = [EnviroClient client];
+		[cl addObserver:self forKeyPath:@"boards" options:NSKeyValueObservingOptionInitial context:NULL];
+		
     }
     return self;
 }
@@ -38,6 +43,28 @@
 }
 
 #pragma mark - View lifecycle
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context;
+{
+	NSDictionary *boards = [[EnviroClient client] boards];
+	for(NSString *key in boards) {
+		NSData *rep = [boards objectForKey:key];
+		
+		NSManagedObjectContext *moc = [self.fetchedResultsController managedObjectContext];
+		NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+		NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:entity.name];
+		[req setPredicate:[NSPredicate predicateWithFormat:@"name = %@", key]];
+		NSArray *things = [moc executeFetchRequest:req error:nil];
+		NSData *existing = [NSKeyedArchiver archivedDataWithRootObject:things.lastObject];
+		if(![existing isEqual:rep]) {
+			id thing = [NSKeyedUnarchiver unarchiveObjectWithData:rep];
+			if(things.count > 0)
+				[moc deleteObject:things.lastObject];
+			[moc insertObject:thing];
+		}
+		// *shudder*
+	}
+}
 
 - (void)viewDidLoad
 {
