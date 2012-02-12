@@ -33,6 +33,12 @@
 #import "SPLoginViewController.h"
 #import "CocoaLibSpotify.h"
 
+@interface SPLoginViewController ()
+
+-(void)session:(SPSession *)aSession didFailToLoginWithError:(NSError *)error;
+
+@end
+
 @implementation SPLoginViewController
 @synthesize usernameField;
 @synthesize passwordField;
@@ -73,13 +79,29 @@
 	
 	[[SPSession sharedSession] attemptLoginWithUserName:self.usernameField.text
 											   password:self.passwordField.text
-									rememberCredentials:NO];
+									rememberCredentials:YES];
 	
 	self.usernameField.enabled = NO;
 	self.passwordField.enabled = NO;
 	self.loginButton.enabled = NO;
 	self.spinner.hidden = NO;
 	
+}
+
+-(void)performAutoLogin {
+	
+	NSError *error = nil; 
+	[[SPSession sharedSession] attemptLoginWithStoredCredentials:&error];
+	
+	if (error != nil) {
+		[self session:[SPSession sharedSession] didFailToLoginWithError:error];
+		return;
+	}
+	
+	self.usernameField.enabled = NO;
+	self.passwordField.enabled = NO;
+	self.loginButton.enabled = NO;
+	self.spinner.hidden = NO;
 }
 
 -(void)session:(SPSession *)aSession didFailToLoginWithError:(NSError *)error; {
@@ -96,6 +118,8 @@
 	self.passwordField.enabled = YES;
 	self.loginButton.enabled = YES;
 	self.spinner.hidden = YES;
+	
+	[[SPSession sharedSession] forgetStoredCredentials];
 }
 
 - (void)didReceiveMemoryWarning
@@ -113,6 +137,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	self.usernameField.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+	
+	if ([SPSession sharedSession].storedCredentialsUserName.length > 0) {
+		[self performAutoLogin];
+	}
 }
 
 - (void)viewDidUnload
