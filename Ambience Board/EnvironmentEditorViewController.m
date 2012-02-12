@@ -8,6 +8,7 @@
 
 #import "EnvironmentEditorViewController.h"
 #import "Track.h"
+#import "AppDelegate.h"
 
 @interface EnvironmentEditorViewController ()
 
@@ -37,6 +38,12 @@
 
 @synthesize environment;
 
+-(IBAction)playEnvironment:(id)sender {
+	
+	[[(AppDelegate *)[[UIApplication sharedApplication] delegate] ambienceController] beginGeneratingAmbienceForEnvironment:self.environment];
+	
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -47,6 +54,11 @@
 	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject)];
 	self.navigationItem.rightBarButtonItem = addButton;
 	
+	UIBarButtonItem *playButton = [[UIBarButtonItem alloc] initWithTitle:@"Play"
+																   style:UIBarButtonItemStyleBordered
+																  target:self
+																  action:@selector(playEnvironment:)];
+	self.navigationItem.leftBarButtonItem = playButton;
 }
 
 - (void)viewDidUnload

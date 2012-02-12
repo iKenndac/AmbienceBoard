@@ -232,10 +232,6 @@ static NSUInteger const fftMagnitudeExponent = 4; // Must be power of two
 	}
 	
 	[self.audioBuffer attemptAppendData:audioFrames ofLength:dataLength];
-	
-	if (!self.audioOutputEnabled)
-		self.audioOutputEnabled = YES;
-	
 	return frameCount;	
 }
 
@@ -275,6 +271,8 @@ static NSUInteger const fftMagnitudeExponent = 4; // Must be power of two
                           0,
                           (vol * vol * vol),
                           0);
+	
+	NSLog(@"[%@ %@]: Volume %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), [NSNumber numberWithDouble:vol]);
 }
 
 -(void)applyAudioStreamDescriptionToInputUnit:(AudioStreamBasicDescription)newInputDescription {
@@ -419,10 +417,6 @@ static NSUInteger const fftMagnitudeExponent = 4; // Must be power of two
     AUGraphStart(audioProcessingGraph);
 	if (outputUnit != NULL)
 		AudioOutputUnitStart(outputUnit);
-	
-	Boolean isRunning = NO;
-	AUGraphIsRunning(audioProcessingGraph, &isRunning);
-	NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), [NSNumber numberWithBool:isRunning]);
 }
 
 -(void)stopAudioQueue {

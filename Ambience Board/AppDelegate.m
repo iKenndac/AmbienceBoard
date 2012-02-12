@@ -18,7 +18,7 @@
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 @synthesize splitViewController = _splitViewController;
-@synthesize coreAudioController;
+@synthesize ambienceController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -34,8 +34,7 @@
 	
 	[SPSession sharedSession].delegate = self;
 	
-	self.coreAudioController = [[SPCoreAudioController alloc] init];
-	[SPSession sharedSession].audioDeliveryDelegate = self.coreAudioController;
+	self.ambienceController = [[EnvironmentAmbienceController alloc] init];
 	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
