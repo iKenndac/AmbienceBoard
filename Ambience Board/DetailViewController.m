@@ -88,6 +88,7 @@
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:editorController];
 	self.popover = [[UIPopoverController alloc] initWithContentViewController:navController];
+	self.popover.delegate = self;
 	
 	[self.popover presentPopoverFromRect:[gridView rectForItemAtIndex:index]
 								  inView:gridView
@@ -100,6 +101,14 @@
 		[self.popover dismissPopoverAnimated:YES];
 		self.popover = nil;
 	}
+}
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+	
+	if (self.gridView.indexOfSelectedItem != NSNotFound) {
+		[self.gridView deselectItemAtIndex:self.gridView.indexOfSelectedItem animated:YES];
+	}
+	
 }
 
 #pragma mark -

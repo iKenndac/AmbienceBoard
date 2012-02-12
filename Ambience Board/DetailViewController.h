@@ -11,7 +11,7 @@
 #import "AQGridViewController.h"
 #import "Board.h"
 
-@interface DetailViewController : AQGridViewController <UISplitViewControllerDelegate, AQGridViewDataSource, AQGridViewDelegate>
+@interface DetailViewController : AQGridViewController <UISplitViewControllerDelegate, UIPopoverControllerDelegate, AQGridViewDataSource, AQGridViewDelegate>
 
 @property (strong, nonatomic) Board *board;
 
