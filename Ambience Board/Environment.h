@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 
 
-@interface Environment : NSManagedObject
+@interface Environment : NSManagedObject <NSCoding>
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSManagedObject *board;

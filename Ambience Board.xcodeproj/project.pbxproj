@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05CB5F2414E8711C00A9AA37 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CB5F1F14E8711C00A9AA37 /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		05CB5F2514E8711C00A9AA37 /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CB5F2114E8711C00A9AA37 /* NSString+UUID.m */; };
+		05CB5F2614E8711C00A9AA37 /* TCAsyncHashProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CB5F2314E8711C00A9AA37 /* TCAsyncHashProtocol.m */; };
+		05CB5F2914E8716E00A9AA37 /* EnviroClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CB5F2814E8716E00A9AA37 /* EnviroClient.m */; };
 		500DEB4514E79D2C00EAC80F /* SPCoreAudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 500DEB4414E79D2C00EAC80F /* SPCoreAudioController.m */; };
 		500DEB4814E79DB100EAC80F /* SPCircularBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 500DEB4714E79DB100EAC80F /* SPCircularBuffer.m */; };
 		500DEB4A14E79F7F00EAC80F /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500DEB4914E79F7F00EAC80F /* CoreAudio.framework */; };
@@ -72,6 +76,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05CB5F1E14E8711C00A9AA37 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncSocket.h; path = envirod/AsyncSocket/RunLoop/AsyncSocket.h; sourceTree = "<group>"; };
+		05CB5F1F14E8711C00A9AA37 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncSocket.m; path = envirod/AsyncSocket/RunLoop/AsyncSocket.m; sourceTree = "<group>"; };
+		05CB5F2014E8711C00A9AA37 /* NSString+UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+UUID.h"; path = "envirod/TCHashProto/NSString+UUID.h"; sourceTree = "<group>"; };
+		05CB5F2114E8711C00A9AA37 /* NSString+UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+UUID.m"; path = "envirod/TCHashProto/NSString+UUID.m"; sourceTree = "<group>"; };
+		05CB5F2214E8711C00A9AA37 /* TCAsyncHashProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TCAsyncHashProtocol.h; path = envirod/TCHashProto/TCAsyncHashProtocol.h; sourceTree = "<group>"; };
+		05CB5F2314E8711C00A9AA37 /* TCAsyncHashProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TCAsyncHashProtocol.m; path = envirod/TCHashProto/TCAsyncHashProtocol.m; sourceTree = "<group>"; };
+		05CB5F2714E8716E00A9AA37 /* EnviroClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnviroClient.h; path = envirod/envirod/EnviroClient.h; sourceTree = SOURCE_ROOT; };
+		05CB5F2814E8716E00A9AA37 /* EnviroClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EnviroClient.m; path = envirod/envirod/EnviroClient.m; sourceTree = SOURCE_ROOT; };
 		500DEB4314E79D2C00EAC80F /* SPCoreAudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPCoreAudioController.h; path = Shared/SPCoreAudioController.h; sourceTree = SOURCE_ROOT; };
 		500DEB4414E79D2C00EAC80F /* SPCoreAudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPCoreAudioController.m; path = Shared/SPCoreAudioController.m; sourceTree = SOURCE_ROOT; };
 		500DEB4614E79DB100EAC80F /* SPCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPCircularBuffer.h; path = Shared/SPCircularBuffer.h; sourceTree = SOURCE_ROOT; };
@@ -204,6 +216,12 @@
 		502CDB0014E75BAF00F60766 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05CB5F1E14E8711C00A9AA37 /* AsyncSocket.h */,
+				05CB5F1F14E8711C00A9AA37 /* AsyncSocket.m */,
+				05CB5F2014E8711C00A9AA37 /* NSString+UUID.h */,
+				05CB5F2114E8711C00A9AA37 /* NSString+UUID.m */,
+				05CB5F2214E8711C00A9AA37 /* TCAsyncHashProtocol.h */,
+				05CB5F2314E8711C00A9AA37 /* TCAsyncHashProtocol.m */,
 				500DEB4D14E79FA200EAC80F /* AudioToolbox.framework */,
 				500DEB4914E79F7F00EAC80F /* CoreAudio.framework */,
 				50869B1714E7881E0013D354 /* libstdc++.dylib */,
@@ -221,6 +239,8 @@
 		502CDB0914E75BAF00F60766 /* Ambience Board */ = {
 			isa = PBXGroup;
 			children = (
+				05CB5F2714E8716E00A9AA37 /* EnviroClient.h */,
+				05CB5F2814E8716E00A9AA37 /* EnviroClient.m */,
 				502CDB1214E75BAF00F60766 /* AppDelegate.h */,
 				502CDB1314E75BAF00F60766 /* AppDelegate.m */,
 				500DEB4214E79D2000EAC80F /* Playback */,
@@ -444,6 +464,10 @@
 				500DEB4514E79D2C00EAC80F /* SPCoreAudioController.m in Sources */,
 				500DEB4814E79DB100EAC80F /* SPCircularBuffer.m in Sources */,
 				500DEB5114E7ACEF00EAC80F /* EnvironmentAmbienceController.m in Sources */,
+				05CB5F2414E8711C00A9AA37 /* AsyncSocket.m in Sources */,
+				05CB5F2514E8711C00A9AA37 /* NSString+UUID.m in Sources */,
+				05CB5F2614E8711C00A9AA37 /* TCAsyncHashProtocol.m in Sources */,
+				05CB5F2914E8716E00A9AA37 /* EnviroClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

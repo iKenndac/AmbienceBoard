@@ -11,7 +11,7 @@
 
 @class Environment;
 
-@interface Track : NSManagedObject
+@interface Track : NSManagedObject <NSCoding>
 
 @property (nonatomic, retain) NSString * spotifyUri;
 @property (nonatomic, retain) NSString * artist;

@@ -10,6 +10,7 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "SPLoginViewController.h"
+#import "EnviroClient.h"
 
 @implementation AppDelegate
 
@@ -22,6 +23,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	EnviroClient *cl = [EnviroClient client];
+	cl.host = @"nevyn.nu";
+	[cl run];
 	
 #include "../appkey.c"
 	

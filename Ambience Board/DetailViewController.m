@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Environment.h"
 #import "EnvironmentEditorViewController.h"
+#import "EnviroClient.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -152,9 +153,17 @@
 	[self configureView];
 	
 	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject)];
-	self.navigationItem.rightBarButtonItem = addButton;
+	UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
+	self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:addButton, saveButton, nil];
+	
 	
 	self.gridView.backgroundColor = [UIColor whiteColor];
+}
+
+-(void)save;
+{
+	NSData *rep = [NSKeyedArchiver archivedDataWithRootObject:self.board];
+	[[EnviroClient client] setBoard:rep forName:self.board.name];
 }
 
 - (void)viewDidUnload
