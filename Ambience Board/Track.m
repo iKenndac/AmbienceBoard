@@ -16,5 +16,7 @@
 @dynamic startTime;
 @dynamic endTime;
 @dynamic environment;
+@dynamic artist;
+@dynamic name;
 
 @end

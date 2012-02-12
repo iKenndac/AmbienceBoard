@@ -11,7 +11,9 @@
         <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Track" inverseName="environment" inverseEntity="Track" syncable="YES"/>
     </entity>
     <entity name="Track" syncable="YES">
+        <attribute name="artist" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="endTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="spotifyUri" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="environment" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Environment" inverseName="tracks" inverseEntity="Environment" syncable="YES"/>
@@ -19,6 +21,6 @@
     <elements>
         <element name="Board" positionX="-4007" positionY="-1809" width="128" height="90"/>
         <element name="Environment" positionX="-3843" positionY="-1809" width="128" height="90"/>
-        <element name="Track" positionX="-3672" positionY="-1824" width="128" height="105"/>
+        <element name="Track" positionX="-3672" positionY="-1824" width="128" height="135"/>
     </elements>
 </model>

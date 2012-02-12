@@ -14,6 +14,8 @@
 @interface Track : NSManagedObject
 
 @property (nonatomic, retain) NSString * spotifyUri;
+@property (nonatomic, retain) NSString * artist;
+@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * startTime;
 @property (nonatomic, retain) NSNumber * endTime;
 @property (nonatomic, retain) Environment *environment;

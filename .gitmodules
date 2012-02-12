@@ -1,3 +1,6 @@
 [submodule "AQGridView"]
 	path = AQGridView
 	url = https://github.com/AlanQuatermain/AQGridView.git
+[submodule "cocoalibspotify"]
+	path = cocoalibspotify
+	url = git://github.com/spotify/cocoalibspotify.git

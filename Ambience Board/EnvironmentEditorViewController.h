@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Environment.h"
+#import "TrackChooserViewController.h"
 
-@interface EnvironmentEditorViewController : UITableViewController
+@interface EnvironmentEditorViewController : UITableViewController <TrackChooserViewControllerDelegate>
 
 @property (nonatomic, strong, readwrite) Environment *environment;
 

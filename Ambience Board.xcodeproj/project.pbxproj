@@ -35,11 +35,35 @@
 		502CDC8F14E7785100F60766 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CDC8E14E7785100F60766 /* Board.m */; };
 		502CDC9214E7785100F60766 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CDC9114E7785100F60766 /* Track.m */; };
 		50869B0614E784A70013D354 /* Environment.m in Sources */ = {isa = PBXBuildFile; fileRef = 50869B0514E784A70013D354 /* Environment.m */; };
+		50869B1414E788130013D354 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50869B1314E788130013D354 /* SystemConfiguration.framework */; };
+		50869B1614E788190013D354 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50869B1514E788190013D354 /* CFNetwork.framework */; };
+		50869B1814E7881E0013D354 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 50869B1714E7881E0013D354 /* libstdc++.dylib */; };
+		50869B1B14E788630013D354 /* libCocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50869B0F14E787FA0013D354 /* libCocoaLibSpotify.a */; };
+		508FC48914E78DA700E602D0 /* SPLoginViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 508FC48514E78DA700E602D0 /* SPLoginViewController_iPad.xib */; };
+		508FC48A14E78DA700E602D0 /* SPLoginViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 508FC48614E78DA700E602D0 /* SPLoginViewController_iPhone.xib */; };
+		508FC48B14E78DA700E602D0 /* SPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 508FC48814E78DA700E602D0 /* SPLoginViewController.m */; };
 		50956DC514E77C8000993BFB /* EnvironmentEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50956DC314E77C8000993BFB /* EnvironmentEditorViewController.m */; };
 		50956DC614E77C8000993BFB /* EnvironmentEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50956DC414E77C8000993BFB /* EnvironmentEditorViewController.xib */; };
 		50956DCA14E781B200993BFB /* TrackChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50956DC814E781B200993BFB /* TrackChooserViewController.m */; };
 		50956DCB14E781B200993BFB /* TrackChooserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50956DC914E781B200993BFB /* TrackChooserViewController.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		50869B0E14E787FA0013D354 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50869B0714E787FA0013D354 /* CocoaLibSpotify iOS Library.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 50AF49DC1439CBFE00E4A5EF;
+			remoteInfo = CocoaLibSpotify;
+		};
+		50869B1914E7885E0013D354 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50869B0714E787FA0013D354 /* CocoaLibSpotify iOS Library.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 50AF49DB1439CBFE00E4A5EF;
+			remoteInfo = CocoaLibSpotify;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		502CDAFD14E75BAF00F60766 /* Ambience Board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ambience Board.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +117,14 @@
 		502CDC9114E7785100F60766 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Track.m; path = "../../Ambience Board/Track.m"; sourceTree = "<group>"; };
 		50869B0414E784A70013D354 /* Environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Environment.h; path = "Ambience Board/Environment.h"; sourceTree = SOURCE_ROOT; };
 		50869B0514E784A70013D354 /* Environment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Environment.m; path = "Ambience Board/Environment.m"; sourceTree = SOURCE_ROOT; };
+		50869B0714E787FA0013D354 /* CocoaLibSpotify iOS Library.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CocoaLibSpotify iOS Library.xcodeproj"; path = "cocoalibspotify/iOS Library/CocoaLibSpotify iOS Library.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		50869B1314E788130013D354 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		50869B1514E788190013D354 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		50869B1714E7881E0013D354 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		508FC48514E78DA700E602D0 /* SPLoginViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPLoginViewController_iPad.xib; sourceTree = "<group>"; };
+		508FC48614E78DA700E602D0 /* SPLoginViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPLoginViewController_iPhone.xib; sourceTree = "<group>"; };
+		508FC48714E78DA700E602D0 /* SPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLoginViewController.h; sourceTree = "<group>"; };
+		508FC48814E78DA700E602D0 /* SPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLoginViewController.m; sourceTree = "<group>"; };
 		50956DC214E77C8000993BFB /* EnvironmentEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnvironmentEditorViewController.h; sourceTree = "<group>"; };
 		50956DC314E77C8000993BFB /* EnvironmentEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnvironmentEditorViewController.m; sourceTree = "<group>"; };
 		50956DC414E77C8000993BFB /* EnvironmentEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnvironmentEditorViewController.xib; sourceTree = "<group>"; };
@@ -106,6 +138,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50869B1B14E788630013D354 /* libCocoaLibSpotify.a in Frameworks */,
+				50869B1814E7881E0013D354 /* libstdc++.dylib in Frameworks */,
+				50869B1614E788190013D354 /* CFNetwork.framework in Frameworks */,
+				50869B1414E788130013D354 /* SystemConfiguration.framework in Frameworks */,
 				502CDC6614E76B8B00F60766 /* QuartzCore.framework in Frameworks */,
 				502CDB0614E75BAF00F60766 /* CoreGraphics.framework in Frameworks */,
 				502CDB0214E75BAF00F60766 /* UIKit.framework in Frameworks */,
@@ -120,6 +156,7 @@
 		502CDAF214E75BAF00F60766 = {
 			isa = PBXGroup;
 			children = (
+				50869B0714E787FA0013D354 /* CocoaLibSpotify iOS Library.xcodeproj */,
 				502CDB0914E75BAF00F60766 /* Ambience Board */,
 				502CDB0014E75BAF00F60766 /* Frameworks */,
 				502CDAFE14E75BAF00F60766 /* Products */,
@@ -137,6 +174,9 @@
 		502CDB0014E75BAF00F60766 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				50869B1714E7881E0013D354 /* libstdc++.dylib */,
+				50869B1514E788190013D354 /* CFNetwork.framework */,
+				50869B1314E788130013D354 /* SystemConfiguration.framework */,
 				502CDC6514E76B8B00F60766 /* QuartzCore.framework */,
 				502CDB0114E75BAF00F60766 /* UIKit.framework */,
 				502CDB0314E75BAF00F60766 /* Foundation.framework */,
@@ -227,6 +267,14 @@
 			path = ../AQGridView/Classes;
 			sourceTree = "<group>";
 		};
+		50869B0814E787FA0013D354 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50869B0F14E787FA0013D354 /* libCocoaLibSpotify.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		50956DC014E77C5F00993BFB /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +290,10 @@
 				50956DC714E781B200993BFB /* TrackChooserViewController.h */,
 				50956DC814E781B200993BFB /* TrackChooserViewController.m */,
 				50956DC914E781B200993BFB /* TrackChooserViewController.xib */,
+				508FC48714E78DA700E602D0 /* SPLoginViewController.h */,
+				508FC48814E78DA700E602D0 /* SPLoginViewController.m */,
+				508FC48514E78DA700E602D0 /* SPLoginViewController_iPad.xib */,
+				508FC48614E78DA700E602D0 /* SPLoginViewController_iPhone.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -260,6 +312,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				50869B1A14E7885E0013D354 /* PBXTargetDependency */,
 			);
 			name = "Ambience Board";
 			productName = "Ambience Board";
@@ -285,12 +338,28 @@
 			mainGroup = 502CDAF214E75BAF00F60766;
 			productRefGroup = 502CDAFE14E75BAF00F60766 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 50869B0814E787FA0013D354 /* Products */;
+					ProjectRef = 50869B0714E787FA0013D354 /* CocoaLibSpotify iOS Library.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				502CDAFC14E75BAF00F60766 /* Ambience Board */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		50869B0F14E787FA0013D354 /* libCocoaLibSpotify.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCocoaLibSpotify.a;
+			remoteRef = 50869B0E14E787FA0013D354 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		502CDAFB14E75BAF00F60766 /* Resources */ = {
@@ -303,6 +372,8 @@
 				502CDC7D14E7740200F60766 /* background.png in Resources */,
 				50956DC614E77C8000993BFB /* EnvironmentEditorViewController.xib in Resources */,
 				50956DCB14E781B200993BFB /* TrackChooserViewController.xib in Resources */,
+				508FC48914E78DA700E602D0 /* SPLoginViewController_iPad.xib in Resources */,
+				508FC48A14E78DA700E602D0 /* SPLoginViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,10 +405,19 @@
 				50956DC514E77C8000993BFB /* EnvironmentEditorViewController.m in Sources */,
 				50956DCA14E781B200993BFB /* TrackChooserViewController.m in Sources */,
 				50869B0614E784A70013D354 /* Environment.m in Sources */,
+				508FC48B14E78DA700E602D0 /* SPLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		50869B1A14E7885E0013D354 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CocoaLibSpotify;
+			targetProxy = 50869B1914E7885E0013D354 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		502CDB0C14E75BAF00F60766 /* InfoPlist.strings */ = {
@@ -417,10 +497,16 @@
 		502CDB2714E75BAF00F60766 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Ambience Board/Ambience Board-Prefix.pch";
 				INFOPLIST_FILE = "Ambience Board/Ambience Board-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = cocoalibspotify/common;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -428,10 +514,16 @@
 		502CDB2814E75BAF00F60766 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Ambience Board/Ambience Board-Prefix.pch";
 				INFOPLIST_FILE = "Ambience Board/Ambience Board-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = cocoalibspotify/common;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

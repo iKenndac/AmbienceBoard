@@ -7,10 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
+#import "SPLoginViewController.h"
 
 @implementation AppDelegate
 
@@ -22,6 +21,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	
+#include "../appkey.c"
+	
+	NSError *error = nil;
+	[SPSession initializeSharedSessionWithApplicationKey:[NSData dataWithBytes:(void *)g_appkey length:g_appkey_size]
+											   userAgent:@"org.danielkennett.AmbienceBoard"
+												   error:&error];
+	if (error)
+		NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), error);
+	
+	[SPSession sharedSession].delegate = self;
+	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 
@@ -38,7 +49,15 @@
 	masterViewController.managedObjectContext = self.managedObjectContext;
 	self.window.rootViewController = self.splitViewController;
     [self.window makeKeyAndVisible];
+	
+	[self performSelector:@selector(showLogin) withObject:nil afterDelay:0.0];
+	
     return YES;
+}
+
+-(void)showLogin {
+	[self.window.rootViewController presentModalViewController:[[SPLoginViewController alloc] init]
+													  animated:NO];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -75,6 +94,40 @@
 {
 	// Saves changes in the application's managed object context before the application terminates.
 	[self saveContext];
+}
+
+#pragma mark -
+#pragma mark SPSessionDelegate Methods
+
+-(void)sessionDidLoginSuccessfully:(SPSession *)aSession; {
+	
+	// Invoked by SPSession after a successful login.
+	[self.window.rootViewController dismissModalViewControllerAnimated:YES];
+	
+}
+
+-(void)session:(SPSession *)aSession didFailToLoginWithError:(NSError *)error; {
+    
+	// Invoked by SPSession after a failed login.
+	
+	// Forward to the login view controller
+	if ([self.window.rootViewController.presentedViewController respondsToSelector:@selector(session:didFailToLoginWithError:)])
+		[self.window.rootViewController.presentedViewController performSelector:@selector(session:didFailToLoginWithError:) withObject:aSession withObject:error];
+}
+
+-(void)sessionDidLogOut:(SPSession *)aSession; {}
+-(void)session:(SPSession *)aSession didEncounterNetworkError:(NSError *)error; {}
+-(void)session:(SPSession *)aSession didLogMessage:(NSString *)aMessage; {}
+-(void)sessionDidChangeMetadata:(SPSession *)aSession; {}
+
+-(void)session:(SPSession *)aSession recievedMessageForUser:(NSString *)aMessage; {
+	
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message from Spotify"
+													message:aMessage
+												   delegate:nil
+										  cancelButtonTitle:@"OK"
+										  otherButtonTitles:nil];
+	[alert show];
 }
 
 - (void)saveContext

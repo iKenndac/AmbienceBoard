@@ -7,7 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CocoaLibSpotify.h"
 
-@interface TrackChooserViewController : UIViewController
+@class TrackChooserViewController;
+
+@protocol TrackChooserViewControllerDelegate <NSObject>
+
+-(void)trackChooser:(TrackChooserViewController *)choose didChooseTracks:(NSArray *)tracks;
+
+@end
+
+@interface TrackChooserViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong, readwrite) SPSearch *search;
+@property (weak, nonatomic) IBOutlet UITableView *searchResultsTable;
+
+@property (weak, nonatomic, readwrite) id <TrackChooserViewControllerDelegate> delegate;
+
+- (IBAction)cancel:(id)sender;
+- (IBAction)done:(id)sender;
 
 @end
